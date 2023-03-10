@@ -34,5 +34,33 @@ namespace StackAndQueuesProblems
                 Console.WriteLine(temp.Data + " ");
             }
         }
+        public void Peek()
+        {
+            if (this.Top == null)
+            {
+                Console.WriteLine("Stack is Empty");
+                return;
+            }
+            Console.WriteLine("{0} is in top of the stack");
+        }
+        public void Pop() 
+        {
+            if(this.Top == null )
+            {
+                Console.WriteLine("Stack Is Empty");
+                return;
+            }
+            Console.WriteLine("Value Popped is {0}", this.Top.Data);
+            this.Top = this.Top.Next;
+
+        }
+        public void IsEmpty()
+        {
+            while(this.Top != null)
+            {
+                Peek();
+                Pop();
+            }
+        }
     }
 }

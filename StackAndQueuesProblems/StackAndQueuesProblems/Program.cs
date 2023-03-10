@@ -10,6 +10,8 @@
             stackLinkedList.Push(30);
             stackLinkedList.Push(70);
             stackLinkedList.Display();
+            stackLinkedList.Peek();
+            stackLinkedList.Pop();
         }
     }
 }
