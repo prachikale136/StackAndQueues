@@ -4,14 +4,22 @@
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello, World!");
+            ///Console.WriteLine("Hello, World!");
             StackLinkedList stackLinkedList= new StackLinkedList();
-            stackLinkedList.Push(56);
-            stackLinkedList.Push(30);
             stackLinkedList.Push(70);
-            stackLinkedList.Display();
+            stackLinkedList.Push(30);
+            stackLinkedList.Push(56);
             stackLinkedList.Peek();
             stackLinkedList.Pop();
+            stackLinkedList.Display();
+            /*
+            QueueLinkedList queueLinkedList= new QueueLinkedList();
+            queueLinkedList.Enqueue(56);
+            queueLinkedList.Enqueue(30);
+            queueLinkedList.Enqueue(70);
+            queueLinkedList.Display();
+            Console.ReadKey();
+            */
         }
     }
 }

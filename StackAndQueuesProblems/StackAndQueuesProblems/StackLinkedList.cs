@@ -8,59 +8,58 @@ namespace StackAndQueuesProblems
 {
     internal class StackLinkedList
     {
-        public Node Top;
-        public void Push(int data)
-        {
-            Node node = new Node( data);
-            if(this.Top == null) 
-            {
-                node.Next = null;
-            }
-            else 
-            {
-                node.Next = this.Top;
-                this.Top = node;
-            }
-            Console.WriteLine("{0} pushes to stack", data );
-        }
 
+        private Node Top;
+        
+        internal void Push(int value)
+        {
+            Node node = new Node(value);
+            if (this.Top == null)
+                node.Next = null;
+            else
+                node.Next = this.Top;
+            this.Top = node;
+            Console.WriteLine("{0} pushed to stack ", value);
+        }
         public void Display()
         {
             Node temp = this.Top;
-            while(temp != null ) 
+            while (temp != null)
             {
-                
+                Console.Write(temp.Data + " ");
                 temp = temp.Next;
-                Console.WriteLine(temp.Data + " ");
             }
         }
-        public void Peek()
+
+        internal void Peek()
         {
             if (this.Top == null)
             {
-                Console.WriteLine("Stack is Empty");
+                Console.WriteLine("Stack is empty");
                 return;
             }
-            Console.WriteLine("{0} is in top of the stack");
+            Console.WriteLine("{0} is in the top of the stack ", this.Top.Data);
         }
-        public void Pop() 
-        {
-            if(this.Top == null )
-            {
-                Console.WriteLine("Stack Is Empty");
-                return;
-            }
-            Console.WriteLine("Value Popped is {0}", this.Top.Data);
-            this.Top = this.Top.Next;
 
-        }
-        public void IsEmpty()
+        internal void Pop()
         {
-            while(this.Top != null)
+            if (this.Top == null)
+            {
+                Console.WriteLine("Stack is empty, Deletion is not possible");
+                return;
+            }
+            Console.WriteLine("Value popped is {0} ", this.Top.Next);
+            this.Top = this.Top.Next;
+        }
+
+        internal void IsEmpty()
+        {
+            while (this.Top != null)
             {
                 Peek();
                 Pop();
             }
         }
+
     }
 }
